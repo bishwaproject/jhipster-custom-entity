@@ -48,6 +48,15 @@ public class CacheConfiguration {
             createCache(cm, com.takeo.japp.domain.User.class.getName());
             createCache(cm, com.takeo.japp.domain.Authority.class.getName());
             createCache(cm, com.takeo.japp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.takeo.japp.domain.Region.class.getName());
+            createCache(cm, com.takeo.japp.domain.Country.class.getName());
+            createCache(cm, com.takeo.japp.domain.Location.class.getName());
+            createCache(cm, com.takeo.japp.domain.Department.class.getName());
+            createCache(cm, com.takeo.japp.domain.Task.class.getName());
+            createCache(cm, com.takeo.japp.domain.Employee.class.getName());
+            createCache(cm, com.takeo.japp.domain.Student.class.getName());
+            createCache(cm, com.takeo.japp.domain.Job.class.getName());
+            createCache(cm, com.takeo.japp.domain.JobHistory.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
