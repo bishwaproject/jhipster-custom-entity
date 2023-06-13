@@ -1,8 +1,8 @@
-<<<<<<< HEAD
-
 # jhipster-custom-entity
 
-# Building custom entities based on Jhipster open source
+## Building custom entities based on Jhipster open source
+Note: JHipster is a development platform to quickly generate, develop, & deploy modern web applications & microservice architectures.
+Purpose of this repo is to create own custom entity which is StudentManagement System in my case.
 
 # japp
 
