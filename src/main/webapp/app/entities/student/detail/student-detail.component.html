@@ -1,0 +1,61 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="student">
+      <h2 data-cy="studentDetailsHeading"><span jhiTranslate="jappApp.student.detail.title">Student</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ student.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jappApp.student.photo" [ngbTooltip]="'jappApp.student.help.photo' | translate">Photo</span></dt>
+        <dd>
+          <div *ngIf="student.photo">
+            <a (click)="openFile(student.photo, student.photoContentType)">
+              <img [src]="'data:' + student.photoContentType + ';base64,' + student.photo" style="max-width: 100%" alt="student image" />
+            </a>
+            {{ student.photoContentType }}, {{ byteSize(student.photo) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jappApp.student.firstName">First Name</span></dt>
+        <dd>
+          <span>{{ student.firstName }}</span>
+        </dd>
+        <dt><span jhiTranslate="jappApp.student.lastName">Last Name</span></dt>
+        <dd>
+          <span>{{ student.lastName }}</span>
+        </dd>
+        <dt><span jhiTranslate="jappApp.student.email">Email</span></dt>
+        <dd>
+          <span>{{ student.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="jappApp.student.phoneNumber">Phone Number</span></dt>
+        <dd>
+          <span>{{ student.phoneNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="jappApp.student.course">Course</span></dt>
+        <dd>
+          <span>{{ student.course }}</span>
+        </dd>
+        <dt><span jhiTranslate="jappApp.student.startDate">Start Date</span></dt>
+        <dd>
+          <span>{{ student.startDate | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/student', student.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
